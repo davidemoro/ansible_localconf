@@ -12,3 +12,6 @@
   apt:  pkg={{item}} state=latest
   with_items:
       - hipchat
+
+- name: Create vimrc
+  template: src=config dest=/home/{{username}}/.ssh/config
