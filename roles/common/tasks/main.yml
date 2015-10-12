@@ -9,7 +9,6 @@
       - python
       - python-dev
       - python-virtualenv
-      - python-setuptools
   
 - name: ensure packages are installed (image support)
   apt:  pkg={{item}} state=latest
@@ -28,3 +27,4 @@
   apt:  pkg={{item}} state=latest
   with_items:
       - git
+      - vim
