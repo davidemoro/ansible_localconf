@@ -1,8 +1,7 @@
 ---
 - name: Setup local
   hosts: all
-  sudo: yes
-      
+
   roles:
     - common
     - vim
