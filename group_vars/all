@@ -1,2 +1,15 @@
 ---
 username: davide
+nvm_repo: "git://github.com/creationix/nvm.git"
+nvm_version: v0.29.0
+nvm_path: "~/.nvm"
+nvm_default_node_version: 0.12.7
+nvm_node_versions:
+  - 0.12.7
+nvm_packages:
+  - npm@latest
+  - gulp-cli
+  - grunt-cli
+  - bower
+  - yo
+  - jshint
