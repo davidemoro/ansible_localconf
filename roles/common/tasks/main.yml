@@ -29,6 +29,14 @@
       - tk8.6-dev
       - python-tk
 
+- name: ensure packages are installed (ldap support)
+  apt:  pkg={{item}} state=latest
+  sudo: true
+  with_items:
+      - libsasl2-dev
+      - libldap2-dev
+      - libssl-dev
+
 - name: ensure various packages are installed
   apt:  pkg={{item}} state=latest
   sudo: true
