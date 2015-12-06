@@ -1,4 +1,11 @@
 ---
+# Ubuntu/Debian users might want to install the dkms package to ensure that the VirtualBox host kernel modules (vboxdrv, vboxnetflt and vboxnetadp) are properly updated if the linux kernel version changes during the next apt-get upgrade
+- name: Ubuntu/Debian kernel module fix
+  apt:  pkg={{item}} state=latest
+  sudo: true
+  with_items:
+      - dkms
+
 - name: virtualization | Download Virtualbox
   get_url: url={{ virtualbox_url }} dest={{ virtualbox_deb_package }}
   
