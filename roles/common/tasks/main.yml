@@ -44,3 +44,5 @@
       - git
       - vim
       - makepasswd
+      - gimp
+      - xsane
