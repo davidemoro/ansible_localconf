@@ -1,6 +1,6 @@
 ---
 - name: skype | Install dependencies
-  sudo: yes
+  become: yes
   apt: pkg={{ item }} state=latest
   with_items:
     - lib32stdc++6
@@ -8,12 +8,12 @@
     - lib32gcc1
   
 - name: skype | Fix any broken depedencies
-  sudo: yes
+  become: yes
   command: apt-get -f -y install
    
 - name: skype | Download Skype installer
   get_url: dest={{ skype_deb_package }} url={{ skype_url }}
   
 - name: skype | Install Skype
-  sudo: yes
+  become: yes
   apt: deb={{ skype_deb_package }}

@@ -9,7 +9,7 @@
   get_url: url=https://tpo.pe/pathogen.vim dest=/home/{{username}}/.vim/autoload/pathogen.vim
 
 - name: install flake8 (needed for vim-flake8)
-  sudo: true
+  become: true
   pip: name=flake8
 
 - name: fetch vim-flake8

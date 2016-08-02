@@ -1,19 +1,19 @@
 ---
 - name: hipchat apt repo
   apt_repository: repo='deb http://downloads.hipchat.com/linux/apt stable main' state=present
-  sudo: true
+  become: true
 
 - name: apt-key
   apt_key: url=https://www.hipchat.com/keys/hipchat-linux.key state=present
-  sudo: true
+  become: true
 
 - name: update the apt cache
   apt: update_cache=yes
-  sudo: true
+  become: true
 
 - name: abstract packages
   apt:  pkg={{item}} state=latest
-  sudo: true
+  become: true
   with_items:
       - hipchat
 

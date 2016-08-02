@@ -1,11 +1,11 @@
 ---
 - name: update the apt cache
   apt: update_cache=yes
-  sudo: true
+  become: true
 
 - name: ensure packages are installed (python support)
   apt:  pkg={{item}} state=latest
-  sudo: true
+  become: true
   with_items:
       - build-essential
       - libxml2-dev
@@ -14,10 +14,11 @@
       - python
       - python-dev
       - python-virtualenv
+      - python-pip
   
 - name: ensure packages are installed (image support)
   apt:  pkg={{item}} state=latest
-  sudo: true
+  become: true
   with_items:
       - libtiff5-dev
       - libjpeg8-dev
@@ -31,7 +32,7 @@
 
 - name: ensure packages are installed (ldap support)
   apt:  pkg={{item}} state=latest
-  sudo: true
+  become: true
   with_items:
       - libsasl2-dev
       - libldap2-dev
@@ -39,7 +40,7 @@
 
 - name: ensure various packages are installed
   apt:  pkg={{item}} state=latest
-  sudo: true
+  become: true
   with_items:
       - git
       - vim

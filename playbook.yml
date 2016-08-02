@@ -4,10 +4,9 @@
 
   roles:
     - common
-#    - vim
-#    - abstract
-#    - nvm
+    - vim
+    - nvm
 #    - skype
 #    - vagrant
     - role: angstwad.docker_ubuntu
-      sudo: true
+      become: true
