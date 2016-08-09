@@ -17,7 +17,6 @@ You can do it in 4 steps:
 
 * ansible-playbook -K playbook.yml
 
-Install Ansible
 
 Requirements
 ------------
